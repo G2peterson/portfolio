@@ -1,0 +1,163 @@
+:root{
+  --bg:#0b1020;
+  --card:#111a33;
+  --text:#e9eefc;
+  --muted:#b9c4e6;
+  --line:rgba(233,238,252,.14);
+  --accent:#6aa6ff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 700px at 10% 0%, #162a5a 0%, var(--bg) 55%);
+  color:var(--text);
+  line-height:1.45;
+}
+
+.wrap{
+  width:min(980px, 92vw);
+  margin:0 auto;
+}
+
+header{
+  padding:28px 0 14px;
+}
+
+.top{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  padding-bottom:14px;
+}
+
+h1{
+  margin:0 0 6px;
+  font-size:34px;
+  letter-spacing:.2px;
+}
+
+.tag{
+  margin:0;
+  color:var(--muted);
+}
+
+.contact{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  font-size:14px;
+  color:var(--muted);
+}
+
+a{
+  color:var(--text);
+  text-decoration:none;
+}
+a:hover{color:var(--accent)}
+
+.nav{
+  display:flex;
+  gap:14px;
+  padding-top:12px;
+}
+.nav a{
+  padding:8px 10px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  color:var(--muted);
+}
+.nav a:hover{
+  color:var(--text);
+  border-color:rgba(106,166,255,.55);
+}
+
+main{padding:16px 0 36px}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+  margin:14px 0;
+}
+
+h2{
+  margin:0 0 10px;
+  font-size:20px;
+}
+
+.grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+}
+
+.project{
+  background:rgba(0,0,0,.18);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+}
+
+.project h3{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.meta{
+  margin:0 0 10px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.note{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.chips{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.chips li{
+  border:1px solid var(--line);
+  padding:8px 10px;
+  border-radius:999px;
+  color:var(--muted);
+  background:rgba(0,0,0,.12);
+}
+
+.footer{
+  margin-top:16px;
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+}
+
+/* Print to PDF, keep it clean */
+@media print{
+  body{background:#fff;color:#111}
+  a{color:#111}
+  .card,.project,.nav a{border:1px solid #ddd}
+  header{padding-top:0}
+  .nav{display:none}
+  .card{background:#fff}
+}
+@media (max-width: 840px){
+  .grid{grid-template-columns:1fr}
+  .top{flex-direction:column}
+  .contact{justify-content:flex-start}
+}
